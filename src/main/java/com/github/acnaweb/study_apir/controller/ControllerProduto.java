@@ -1,4 +1,4 @@
-package com.github.acnaweb.study_apir;
+package com.github.acnaweb.study_apir.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -25,12 +25,12 @@ public class ControllerProduto {
 
     @PutMapping
     public ResponseEntity<String> update() {
-        return ResponseEntity.status(200).body("Produto atualizado");        
+        return ResponseEntity.status(200).body("Produto atualizado");
     }
 
     @GetMapping
     public ResponseEntity<String> find() {
-        return ResponseEntity.status(200).body("Maça");        
+        return ResponseEntity.status(200).body("Maça");
 
     }
 }
