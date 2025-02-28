@@ -1,4 +1,4 @@
-package com.github.acnaweb.study_apir;
+package com.github.acnaweb.study_apir.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
