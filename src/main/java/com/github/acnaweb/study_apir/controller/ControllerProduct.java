@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("produtos")
-public class ControllerProduto {
+public class ControllerProduct {
 
     @PostMapping
     public ResponseEntity<String> create() {
