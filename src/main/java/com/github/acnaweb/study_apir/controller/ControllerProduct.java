@@ -26,10 +26,12 @@ public class ControllerProduct {
     @PutMapping
     public ResponseEntity<String> update() {
         return ResponseEntity.status(200).body("Produto atualizado");
+        return ResponseEntity.status(200).body("Produto atualizado");        
     }
 
     @GetMapping
     public ResponseEntity<String> find() {
         return ResponseEntity.status(200).body("Maça");
+        return ResponseEntity.status(200).body("Maça");        
     }
 }

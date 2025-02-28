@@ -5,7 +5,5 @@ import java.util.List;
 import com.github.acnaweb.study_apir.model.Product;
 
 public class ProductService {
-
-    private List<Product> produtos;
-
+    private List<Product> products;
 }
