@@ -15,5 +15,4 @@ public class Product {
     public void setNome(String nome) {
         this.nome = nome;
     }    
-
 }
