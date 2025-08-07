@@ -1,4 +1,4 @@
-package com.github.acnaweb.study_apir.service;
+package com.github.lx025.study_apir.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,13 +7,13 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.github.acnaweb.study_apir.dto.pedido.PedidoRequestCreate;
-import com.github.acnaweb.study_apir.model.Item;
-import com.github.acnaweb.study_apir.model.Pedido;
-import com.github.acnaweb.study_apir.model.PedidoStatus;
-import com.github.acnaweb.study_apir.model.Produto;
-import com.github.acnaweb.study_apir.repository.PedidoRepository;
-import com.github.acnaweb.study_apir.repository.ProdutoRepository;
+import com.github.lx025.study_apir.dto.pedido.PedidoRequestCreate;
+import com.github.lx025.study_apir.model.Item;
+import com.github.lx025.study_apir.model.Pedido;
+import com.github.lx025.study_apir.model.PedidoStatus;
+import com.github.lx025.study_apir.model.Produto;
+import com.github.lx025.study_apir.repository.PedidoRepository;
+import com.github.lx025.study_apir.repository.ProdutoRepository;
 
 @Service
 public class PedidoService {

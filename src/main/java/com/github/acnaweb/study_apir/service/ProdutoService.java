@@ -1,14 +1,14 @@
-package com.github.acnaweb.study_apir.service;
+package com.github.lx025.study_apir.service;
 
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.github.acnaweb.study_apir.dto.produto.ProdutoRequestCreate;
-import com.github.acnaweb.study_apir.dto.produto.ProdutoRequestUpdate;
-import com.github.acnaweb.study_apir.model.Produto;
-import com.github.acnaweb.study_apir.repository.ProdutoRepository;
+import com.github.lx025.study_apir.dto.produto.ProdutoRequestCreate;
+import com.github.lx025.study_apir.dto.produto.ProdutoRequestUpdate;
+import com.github.lx025.study_apir.model.Produto;
+import com.github.lx025.study_apir.repository.ProdutoRepository;
 
 @Service
 public class ProdutoService {

@@ -1,4 +1,4 @@
-package com.github.acnaweb.study_apir.model;
+package com.github.lx025.study_apir.model;
 
 import java.time.LocalDate;
 import java.util.List;

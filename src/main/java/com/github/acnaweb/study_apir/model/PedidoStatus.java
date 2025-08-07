@@ -1,4 +1,4 @@
-package com.github.acnaweb.study_apir.model;
+package com.github.lx025.study_apir.model;
 
 public enum PedidoStatus {
     ABERTO("Pedido Aberto"), 
