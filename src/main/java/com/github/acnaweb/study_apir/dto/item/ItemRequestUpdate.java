@@ -1,4 +1,4 @@
-package com.github.acnaweb.study_apir.dto.item;
+package com.github.lx025.study_apir.dto.item;
 
 import java.math.BigDecimal;
 
