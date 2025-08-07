@@ -1,11 +1,11 @@
-package com.github.acnaweb.study_apir.dto.pedido;
+package com.github.lx025.study_apir.dto.pedido;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.github.acnaweb.study_apir.dto.item.ItemResponse;
-import com.github.acnaweb.study_apir.model.Pedido;
+import com.github.lx025.study_apir.dto.item.ItemResponse;
+import com.github.lx025.study_apir.model.Pedido;
 
 public class PedidoResponse {
     private Long id;

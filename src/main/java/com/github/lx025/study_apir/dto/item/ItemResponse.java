@@ -2,7 +2,7 @@ package com.github.lx025.study_apir.dto.item;
 
 import java.math.BigDecimal;
 
-import com.github.acnaweb.study_apir.model.Item;
+import com.github.lx025.study_apir.model.Item;
 
 public class ItemResponse {
     private Long id;

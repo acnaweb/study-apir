@@ -1,11 +1,11 @@
-package com.github.acnaweb.study_apir.dto.pedido;
+package com.github.lx025.study_apir.dto.pedido;
 
 import java.time.LocalDate;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
-import com.github.acnaweb.study_apir.dto.item.ItemRequestCreate;
+import com.github.lx025.study_apir.dto.item.ItemRequestCreate;
 
 public class PedidoRequestCreate { 
     @JsonFormat(shape = Shape.STRING, pattern = "dd-MM-yyyy")

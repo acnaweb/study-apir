@@ -1,8 +1,8 @@
-package com.github.acnaweb.study_apir.dto.pedido;
+package com.github.lx025.study_apir.dto.pedido;
 
 import java.math.BigDecimal;
 
-import com.github.acnaweb.study_apir.model.Produto;
+import com.github.lx025.study_apir.model.Produto;
 
 public class PedidoRequestUpdate {
     private BigDecimal valor;
