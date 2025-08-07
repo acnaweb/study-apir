@@ -1,4 +1,4 @@
-package com.github.acnaweb.study_apir.controller;
+package com.github.lx025.study_apir.controller;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.github.acnaweb.study_apir.dto.pedido.PedidoRequestCreate;
-import com.github.acnaweb.study_apir.dto.pedido.PedidoResponse;
-import com.github.acnaweb.study_apir.model.PedidoStatus;
-import com.github.acnaweb.study_apir.service.PedidoService;
+import com.github.lx025.study_apir.dto.pedido.PedidoRequestCreate;
+import com.github.lx025.study_apir.dto.pedido.PedidoResponse;
+import com.github.lx025.study_apir.model.PedidoStatus;
+import com.github.lx025.study_apir.service.PedidoService;
 
 @RestController
-@RequestMapping("pedidos")
+@RequestMapping("pedidos ")
 public class ControllerPedido {
 
     @Autowired

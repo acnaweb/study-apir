@@ -1,4 +1,4 @@
-package com.github.acnaweb.study_apir;
+package com.github.lx025.study_apir;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

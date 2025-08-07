@@ -1,4 +1,4 @@
-package com.github.acnaweb.study_apir.controller;
+package com.github.lx025.study_apir.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
