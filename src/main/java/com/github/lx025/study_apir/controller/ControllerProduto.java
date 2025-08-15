@@ -20,7 +20,7 @@ import com.github.lx025.study_apir.dto.produto.ProdutoResponse;
 import com.github.lx025.study_apir.service.ProdutoService;
 
 @RestController
-@RequestMapping("produtos")
+@RequestMapping("/api/${api.version}/produtos")
 public class ControllerProduto {
 
     @Autowired
@@ -28,13 +28,11 @@ public class ControllerProduto {
 
     @PostMapping
     public ResponseEntity<ProdutoResponse> create(
-                                @RequestBody ProdutoRequestCreate dto) {                                    
-        
+            @RequestBody ProdutoRequestCreate dto) {
+
         return ResponseEntity.status(201).body(
-            new ProdutoResponse().toDto(
-                productService.createProduct(dto)
-            )
-        );
+                new ProdutoResponse().toDto(
+                        productService.createProduct(dto)));
     }
 
     @DeleteMapping("/{id}")
@@ -45,33 +43,31 @@ public class ControllerProduto {
             return ResponseEntity.noContent().build();
         } else {
             return ResponseEntity.notFound().build();
-        }     
+        }
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ProdutoResponse> 
-            update(@PathVariable Long id, @RequestBody ProdutoRequestUpdate dto) {
-        
+    public ResponseEntity<ProdutoResponse> update(@PathVariable Long id, @RequestBody ProdutoRequestUpdate dto) {
+
         return productService.updateProduct(id, dto)
-            .map(p-> new ProdutoResponse().toDto(p))
-            .map(ResponseEntity::ok)
-            .orElse(ResponseEntity.notFound().build());
+                .map(p -> new ProdutoResponse().toDto(p))
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<ProdutoResponse> findById(@PathVariable Long id) {
         return productService.getProductById(id)
-            .map(p-> new ProdutoResponse().toDto(p))
-            .map(ResponseEntity::ok)
-            .orElse(ResponseEntity.notFound().build());     
+                .map(p -> new ProdutoResponse().toDto(p))
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @GetMapping
     public ResponseEntity<List<ProdutoResponse>> findAll() {
-        List<ProdutoResponse> response = 
-            productService.getAll().stream()
-            .map(p-> new ProdutoResponse().toDto(p))
-            .collect(Collectors.toList()); 
+        List<ProdutoResponse> response = productService.getAll().stream()
+                .map(p -> new ProdutoResponse().toDto(p))
+                .collect(Collectors.toList());
         return ResponseEntity.ok(response);
     }
 }
