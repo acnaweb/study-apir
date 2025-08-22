@@ -19,7 +19,7 @@ public class ControllerPing {
 
     @GetMapping("/version")
     public String version() {
-        return "Versão: " + version;
+        return version;
     }
 
 }
