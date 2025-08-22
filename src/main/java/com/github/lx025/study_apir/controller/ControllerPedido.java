@@ -18,7 +18,7 @@ import com.github.lx025.study_apir.model.PedidoStatus;
 import com.github.lx025.study_apir.service.PedidoService;
 
 @RestController
-@RequestMapping("pedidos ")
+@RequestMapping("/api/${api.version}/pedidos")
 public class ControllerPedido {
 
     @Autowired
@@ -26,31 +26,31 @@ public class ControllerPedido {
 
     @PostMapping
     public ResponseEntity<PedidoResponse> create(
-                                @RequestBody PedidoRequestCreate dto) {          
+            @RequestBody PedidoRequestCreate dto) {
         return ResponseEntity
-            .status(201)
-            .body(new PedidoResponse().toDto(pedidoService.create(dto)));
+                .status(201)
+                .body(new PedidoResponse().toDto(pedidoService.create(dto)));
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<PedidoResponse> findById(@PathVariable Long id){
+    public ResponseEntity<PedidoResponse> findById(@PathVariable Long id) {
         return pedidoService.findById(id)
-            .map(pedido -> ResponseEntity.ok(new PedidoResponse().toDto(pedido)))
-            .orElse(ResponseEntity.notFound().build());
+                .map(pedido -> ResponseEntity.ok(new PedidoResponse().toDto(pedido)))
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @GetMapping()
-    public ResponseEntity<List<PedidoResponse>> listAll(){
-	    return ResponseEntity.ok(pedidoService.findAll().stream()
-            .map(pedido -> new PedidoResponse().toDto(pedido))
-            .collect(Collectors.toList()));
+    public ResponseEntity<List<PedidoResponse>> listAll() {
+        return ResponseEntity.ok(pedidoService.findAll().stream()
+                .map(pedido -> new PedidoResponse().toDto(pedido))
+                .collect(Collectors.toList()));
     }
 
     // Query Parameter /pedidos/query?status=CANCELADO
     @GetMapping("query")
-    public ResponseEntity<List<PedidoResponse>> findByValue(PedidoStatus status){
-	    return ResponseEntity.ok(pedidoService.findByStatus(status).stream()
-            .map(pedido -> new PedidoResponse().toDto(pedido))
-            .collect(Collectors.toList()));
+    public ResponseEntity<List<PedidoResponse>> findByValue(PedidoStatus status) {
+        return ResponseEntity.ok(pedidoService.findByStatus(status).stream()
+                .map(pedido -> new PedidoResponse().toDto(pedido))
+                .collect(Collectors.toList()));
     }
 }
