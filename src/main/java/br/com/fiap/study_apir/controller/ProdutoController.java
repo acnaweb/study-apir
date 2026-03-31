@@ -36,18 +36,20 @@ public class ProdutoController {
 
     @GetMapping    
     public ResponseEntity<List<Produto>> findAll() {        
-        return ResponseEntity.status(HttpStatus.OK).body(mockup.findAll());
+        return ResponseEntity.ok(mockup.findAll());
     }
 
     @PutMapping
     public ResponseEntity<String> update() {
-        return ResponseEntity.status(HttpStatus.OK).body("Produto atualizado");
+        return ResponseEntity.ok("Produto atualizado");
     }
 
-    @DeleteMapping
-    public ResponseEntity<String> delete() {        
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Produto excluído");
-
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteById(@PathVariable Long id) { 
+        if (mockup.deleteById(id)) {
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }        
     }
-
 }

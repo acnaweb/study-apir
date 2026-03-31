@@ -1,20 +1,11 @@
 package br.com.fiap.study_apir.model;
 
+import java.math.BigDecimal;
+import lombok.Data;
+
+@Data
 public class Produto {
-    private Long id;
-    private String nome;
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-    public String getNome() {
-        return nome;
-    }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-
+    private final Long id;
+    private final String nome;
+    private final BigDecimal valor;
 }
