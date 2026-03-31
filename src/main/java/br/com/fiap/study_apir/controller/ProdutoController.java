@@ -27,8 +27,11 @@ public class ProdutoController {
     }
 
     @GetMapping("/{id}")    
-    public ResponseEntity<Produto> findById(@PathVariable Long id) {        
-        return ResponseEntity.status(HttpStatus.OK).body(mockup.findById(id));
+    public ResponseEntity<Produto> findById(@PathVariable Long id) { 
+        return mockup
+                .findById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());        
     }
 
     @GetMapping    
