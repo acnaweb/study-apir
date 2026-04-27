@@ -2,10 +2,16 @@ package br.com.fiap.study_apir.model;
 
 import java.math.BigDecimal;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Produto {
+    @Id
     private Long id;
     private String nome;
     private BigDecimal valor;
+
 
     public Produto(Long id, String nome, BigDecimal valor) {
         this.id = id;
