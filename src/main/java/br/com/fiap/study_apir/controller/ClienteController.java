@@ -15,23 +15,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.fiap.study_apir.model.Produto;
-import br.com.fiap.study_apir.repository.ProdutoRepository;
+import br.com.fiap.study_apir.model.Cliente;
+import br.com.fiap.study_apir.repository.ClienteRepository;
 
 @RestController
-@RequestMapping("api/${api.version}/produtos")
-public class ProdutoController {
+@RequestMapping("api/${api.version}/clientes")
+public class ClienteController {
 
     @Autowired
-    private ProdutoRepository repository;
+    private ClienteRepository repository;
 
-    @PostMapping
-    public ResponseEntity<Produto> create(@RequestBody Produto produto) {         
-        return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(produto));
+     @PostMapping
+    public ResponseEntity<Cliente> create(@RequestBody Cliente cliente) {         
+        return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(cliente));
     }
 
     @GetMapping("/{id}")    
-    public ResponseEntity<Produto> findById(@PathVariable Long id) { 
+    public ResponseEntity<Cliente> findById(@PathVariable Long id) { 
         return repository
                 .findById(id)
                 .map(ResponseEntity::ok)
@@ -39,20 +39,20 @@ public class ProdutoController {
     }
 
     @GetMapping    
-    public ResponseEntity<List<Produto>> findAll() {        
+    public ResponseEntity<List<Cliente>> findAll() {        
         return ResponseEntity.ok(repository.findAll());
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Produto> update(@PathVariable Long id, 
-                                @RequestBody Produto produto) {
+    public ResponseEntity<Cliente> update(@PathVariable Long id, 
+                                @RequestBody Cliente cliente) {
 
-        Optional<Produto> optProduto = repository.findById(id);
+        Optional<Cliente> optCliente = repository.findById(id);
 
-        if (optProduto.isPresent()) {
-            produto.setId(id);
-            Produto produtoAlterado = repository.save(produto);
-            return ResponseEntity.ok(produtoAlterado);
+        if (optCliente.isPresent()) {
+            cliente.setId(id);
+            Cliente clienteAlterado = repository.save(cliente);
+            return ResponseEntity.ok(clienteAlterado);
         } else {
             return ResponseEntity.notFound().build();
         }     
@@ -64,4 +64,5 @@ public class ProdutoController {
         return ResponseEntity.noContent().build();
  
     }
+
 }

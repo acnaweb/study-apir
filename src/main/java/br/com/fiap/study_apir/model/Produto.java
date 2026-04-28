@@ -19,6 +19,10 @@ public class Produto {
         this.valor = valor;
     }
 
+    public Produto() {
+    }
+
+
     public Long getId() {
         return id;
     }
