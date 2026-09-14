@@ -10,7 +10,7 @@ on:
 env:
   AZURE_RESOURCE_GROUP: rs-study-apir
   AZURE_CONTAINER_APP: study-apir-dev
-  AZURE_IMAGE: acnaweb/study-api:latest
+  DOCKER_IMAGE: docker.io/acnaweb/study-api:latest
 
 jobs:
   deploy:
@@ -18,29 +18,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
       - name: Azure Login
         uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Deploy Container App
+      - name: Update Container App
         uses: azure/cli@v2
         with:
           inlineScript: |
             az containerapp update \
               --name "$AZURE_CONTAINER_APP" \
               --resource-group "$AZURE_RESOURCE_GROUP" \
-              --image "$AZURE_IMAGE"
+              --image "$DOCKER_IMAGE"
 
-      - name: Show Container App
+      - name: Show deployment
         uses: azure/cli@v2
         with:
           inlineScript: |
             az containerapp show \
               --name "$AZURE_CONTAINER_APP" \
               --resource-group "$AZURE_RESOURCE_GROUP" \
-              --query "{name:name, provisioningState:properties.provisioningState, fqdn:properties.configuration.ingress.fqdn}" \
+              --query "{name:name, status:properties.runningStatus, fqdn:properties.configuration.ingress.fqdn}" \
               --output table
