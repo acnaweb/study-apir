@@ -5,12 +5,12 @@
 ### PowerShell
 
 ```powershell
-$env:RESOURCE_GROUP="rs-microservice"
-$env:SQL_SERVER="sql-study-apir-dev"
-$env:APP_CONTAINER="study-apir-dev"
-$env:CONTAINERAPPS_ENVIRONMENT="study-apir-dev"
+$env:RESOURCE_GROUP="rs-[rm]-study-apir-dev"
+$env:SQL_SERVER="[rm]-sql-study-apir-dev"
+$env:APP_CONTAINER="[rm]-study-apir-dev"
+$env:CONTAINERAPPS_ENVIRONMENT="[rm]-study-apir-dev"
 
-$env:DB_SERVER_URL="sql-study-apir-dev.database.windows.net"
+$env:DB_SERVER_URL="[rm]-sql-study-apir-dev.database.windows.net"
 $env:DB_SERVER_PORT="1433"
 $env:DB_SCHEMA="api"
 $env:DB_USER="sqladmin"
@@ -202,6 +202,13 @@ az containerapp logs show \
   --follow
 ```
 
+```bash
+az containerapp logs show \
+  --name "$APP_CONTAINER" \
+  --resource-group "$RESOURCE_GROUP" \
+  --type console \
+  --tail 50
+```
 ## 17. Estrutura dos recursos
 
 ```text
