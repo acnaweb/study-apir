@@ -5,7 +5,7 @@
 ### PowerShell
 
 ```powershell
-$env:RESOURCE_GROUP="rs-[rm]-study-apir-dev"
+$env:RESOURCE_GROUP="rg-[rm]-study-apir-dev"
 $env:SQL_SERVER="[rm]-sql-study-apir-dev"
 $env:APP_CONTAINER="[rm]-study-apir-dev"
 $env:CONTAINERAPPS_ENVIRONMENT="[rm]-study-apir-dev"
@@ -23,12 +23,12 @@ $env:DOCKER_IMAGE="acnaweb/study-apir"
 ### Bash
 
 ```bash
-export RESOURCE_GROUP=rs-microservice
-export SQL_SERVER=sql-study-apir-dev
-export APP_CONTAINER=study-apir-dev
-export CONTAINERAPPS_ENVIRONMENT=study-apir-dev
+export RESOURCE_GROUP=rg-[rm]-study-apir-dev
+export SQL_SERVER=[rm]-sql-study-apir-dev
+export APP_CONTAINER=[rm]-study-apir-dev
+export CONTAINERAPPS_ENVIRONMENT=[rm]-study-apir-dev
 
-export DB_SERVER_URL=sql-study-apir-dev.database.windows.net
+export DB_SERVER_URL=[rm]-sql-study-apir-dev.database.windows.net
 export DB_SERVER_PORT=1433
 export DB_SCHEMA=api
 export DB_USER=sqladmin
