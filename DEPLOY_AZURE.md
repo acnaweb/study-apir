@@ -179,8 +179,7 @@ az containerapp show \
 az containerapp update \
   --name "$APP_CONTAINER" \
   --resource-group "$RESOURCE_GROUP" \
-  --image "$DOCKER_IMAGE" \
-  --revision-suffix "$(date +%Y%m%d%H%M%S)"
+  --image "$DOCKER_IMAGE"
 ```
 
 ## 15. Forçar redeploy — PowerShell
